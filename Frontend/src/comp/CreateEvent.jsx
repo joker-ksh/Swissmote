@@ -18,7 +18,7 @@ const CreateEvent = () => {
     // Fetch events when the component mounts
     const fetchEvents = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/events');
+        const res = await axios.get('https://swissmote-ydck.onrender.com/api/events');
         if (res.status === 200) {
           setEvents(res.data); // Assuming the data contains an array of events
         }
@@ -48,7 +48,7 @@ const CreateEvent = () => {
 
     // Send the new event data to the server
     try {
-      const res = await axios.post('http://localhost:5000/api/events/create', newEvent, { withCredentials: true });
+      const res = await axios.post('https://swissmote-ydck.onrender.com/api/events/create', newEvent, { withCredentials: true });
       if (res.status === 201) {
         console.log('Event created successfully');
         setEvents([...events, res.data]); // Add the new event to the list
@@ -70,7 +70,7 @@ const CreateEvent = () => {
     console.log('Deleting event with ID:', eventId); // Logs the event ID when the delete button is clicked
     // You can also send a request to delete the event from the server if needed:
     // try {
-    //   await axios.delete(`http://localhost:5000/api/events/${eventId}`);
+    //   await axios.delete(`https://swissmote-ydck.onrender.com/api/events/${eventId}`);
     //   setEvents(events.filter(event => event.id !== eventId)); // Remove the event from the list
     // } catch (err) {
     //   console.error('Error deleting event:', err);

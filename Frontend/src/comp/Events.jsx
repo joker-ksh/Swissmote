@@ -12,7 +12,7 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/events/allEvents', { withCredentials: true });
+        const res = await axios.get('https://swissmote-ydck.onrender.com/api/events/allEvents', { withCredentials: true });
         const events = res.data.map((event) => ({
           id: event._id,
           name: event.name,
@@ -63,7 +63,7 @@ const Events = () => {
   const handleDelete = (eventId) => {
     console.log(`Event with ID: ${eventId}`);
     try {
-      axios.delete(`http://localhost:5000/api/events/delete/${eventId}`, { withCredentials: true });
+      axios.delete(`https://swissmote-ydck.onrender.com/api/events/delete/${eventId}`, { withCredentials: true });
       const newEvents = events.filter((event) => event.id !== eventId);
       setEvents(newEvents);
     } catch (e) {

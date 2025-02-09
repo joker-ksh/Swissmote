@@ -18,7 +18,7 @@ const Login = () => {
     // console.log('Login attempt:', { email, password });
     
     try{
-      await axios.post("http://localhost:5000/api/auth/login",{
+      await axios.post("https://swissmote-ydck.onrender.com/api/auth/login",{
         email: email,
         password: password
       },{withCredentials: true}).then((res) => {

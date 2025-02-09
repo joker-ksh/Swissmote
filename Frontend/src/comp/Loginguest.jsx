@@ -87,7 +87,7 @@ const Loginguest = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/events/guestEvents');
+        const res = await fetch('https://swissmote-ydck.onrender.com/api/events/guestEvents');
         const data = await res.json(); // Parsing JSON response
         const eventsData = data.map((event) => ({
           id: event._id,

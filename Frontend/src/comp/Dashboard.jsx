@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/logout', { withCredentials: true });
+      const res = await axios.get('https://swissmote-ydck.onrender.com/api/auth/logout', { withCredentials: true });
       if (res.status === 200) {
         console.log(res.data.message);
         navigate('/login');
@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   const fetchAttendees = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/attendees/live', { withCredentials: true });
+      const res = await axios.get('https://swissmote-ydck.onrender.com/api/attendees/live', { withCredentials: true });
       setAttendees(res.data); // Assuming API returns an array of { userName, eventName }
     } catch (error) {
       console.error('Failed to fetch attendees:', error);
